@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Portfolio</title>
+  <head lang="en">
+    <title><%= yield(:title) %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="description" content="<%= yield(:description) %>">
+    <meta property="og:title" content="<%= yield(:title) %>">
+    <meta property="og:site_name" content="Briley Creative">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enigmatic-scrubland-23648.herokuapp.com/">
+    <meta property="og:image" content="https://res.cloudinary.com/dwjulenau/image/upload/v1634989625/josh-portfolio/briley-creative-og-image.jpg">
+    <meta property="og:image:width" content="627">
+    <meta property="og:image:height" content="1200">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@joshuabriley">
+    <meta name="twitter:url" content="https://enigmatic-scrubland-23648.herokuapp.com/">
+    <meta name="twitter:title" content="<%= yield(:title) %>">
+    <meta name="twitter:description" content="<%= yield(:description) %>">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dwjulenau/image/upload/v1634989625/josh-portfolio/briley-creative-og-image.jpg">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body class="flex flex-col min-h-screen">
+    <%= render '/shared/header' %>
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+    <%= render '/shared/footer' %>
   </body>
 </html>
