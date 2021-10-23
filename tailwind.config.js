@@ -59,7 +59,28 @@ module.exports = {
           lineHeight: '1',
         },
       }
-
+      const buttons = {
+        '.btn': {
+          alignItems: 'center',
+          border: `${theme('border.1')} solid`,
+          color: `${theme('colors.white')}`,
+          display: 'inline-flex',
+          justifyContent: 'center',
+          padding: `${theme('spacing.3')} ${theme('spacing.8')}`,
+          textTransform: 'uppercase',
+          transition: 'all .2s ease-in-out',
+          whiteSpace: 'nowrap',
+        },
+        '.btn-secondary': {
+          backgroundColor: `${theme('colors.white')}`,
+          borderColor: `${theme('colors.jb-gray-dk-blue')}`,
+        },
+        '.btn-secondary:hover': {
+          backgroundColor: `${theme('colors.jb-cyan')}`,
+          borderColor: `${theme('colors.jb-cyan')}`,
+          color: '#ffffff',
+        },
+      }
       addComponents(text)
     }),
   ],

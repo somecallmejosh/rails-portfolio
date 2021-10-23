@@ -3,12 +3,19 @@
     <a href="/" aria-label="Home page">
       <%= render '/shared/logo' %>
     </a>
-    <nav aria-label="Main Site Nav" class="flex h-full">
-      <ul class="flex items-center h-full space-x-4 text-sm uppercase">
-        <li class="flex items-center h-full"><a href="/" class="flex items-center h-full hover:text-jb-cyan">Home</a></li>
-        <li class="flex items-center h-full"><a href="#" class="flex items-center h-full hover:text-jb-cyan">Portfolio</a></li>
-        <li class="flex items-center h-full"><a href="/contact" class="flex items-center h-full hover:text-jb-cyan">Contact</a></li>
+    <nav x-data="{menuIsVisible: false}" aria-label="Main Site Nav" class="relative flex items-center h-full">
+      <button @click="menuIsVisible = !menuIsVisible" aria-label="Main Menu Toggle" class="lg:hidden">
+        <span x-show="!menuIsVisible"><%= heroicon "menu", options: { class: "h-8 w-8" } %></span>
+        <span x-show="menuIsVisible"><%= heroicon "x", options: { class: "h-8 w-8" } %></span>
+      </button>
+      <ul class="absolute right-0 p-6 space-y-6 text-sm text-white uppercase duration-200 origin-top-right transform lg:space-y-0 lg:gap-4 transition-trasnform bg-jb-gray-dk-blue lg:text-jb-gray-dk-blue lg:bg-white lg:relative lg:flex lg:items-center lg:h-full lg:top-0 lg:p-0 w-72 lg:w-auto"
+        :class="menuIsVisible ? 'translate-y-0 top-20' : 'opcacity-0 lg:opacity-1 -translate-y-full lg:translate-y-0 top-0'"
+      >
+        <li class="flex items-center h-full"><a href="/" class="flex items-center w-full h-full hover:text-jb-cyan">Home</a></li>
+        <li class="flex items-center h-full"><a href="#" class="flex items-center w-full h-full hover:text-jb-cyan">Portfolio</a></li>
+        <li class="flex items-center h-full"><a href="/contact" class="flex items-center w-full h-full hover:text-jb-cyan">Contact</a></li>
       </ul>
     </nav>
+    
   </div>
 </header>
