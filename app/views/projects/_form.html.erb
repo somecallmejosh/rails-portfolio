@@ -11,54 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="mb-8 field">
+    <%= form.label :title, class: 'font-bold mb-2 block text-sm' %>
+    <%= form.text_field :title, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
   </div>
 
-  <div class="field">
-    <%= form.label :short_description %>
-    <%= form.text_area :short_description %>
+  <div class="grid gap-8 mb-8 lg:grid-cols-2">
+    <div class="field">
+      <%= form.label :short_description, class: 'font-bold mb-2 block text-sm' %>
+      <%= form.text_area :short_description, class: 'bg-jb-gray-dk-blue h-48 p-4 w-full bg-opacity-10' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :long_description, class: 'font-bold mb-2 block text-sm' %>
+      <%= form.text_area :long_description, class: 'bg-jb-gray-dk-blue h-48 p-4 w-full bg-opacity-10' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :long_description %>
-    <%= form.text_area :long_description %>
+  <div class="grid grid-cols-3 gap-8 mb-8">
+    <div class="field">
+      <%= form.label :thumbnail_one, class: 'font-bold mb-2 block text-sm' %>
+      <%= form.text_field :thumbnail_one, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :thumbnail_two, class: 'font-bold mb-2 block text-sm' %>
+      <%= form.text_field :thumbnail_two, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :thumbnail_three, class: 'font-bold mb-2 block text-sm' %>
+      <%= form.text_field :thumbnail_three, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :thumbnail_one %>
-    <%= form.text_field :thumbnail_one %>
+  <div class="mb-8 field">
+    <%= form.label :image, class: 'font-bold mb-2 block text-sm' %>
+    <%= form.text_field :image, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
   </div>
 
-  <div class="field">
-    <%= form.label :thumbnail_two %>
-    <%= form.text_field :thumbnail_two %>
+  <div class="mb-8 field">
+    <%= form.label :project_url, class: 'font-bold mb-2 block text-sm' %>
+    <%= form.text_field :project_url, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
   </div>
 
-  <div class="field">
-    <%= form.label :thumbnail_three %>
-    <%= form.text_field :thumbnail_three %>
+  <div class="mb-8 field">
+    <%= form.label :role_in_project, class: 'font-bold mb-2 block text-sm' %>
+    <%= form.text_field :role_in_project, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :project_url %>
-    <%= form.text_field :project_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :role_in_project %>
-    <%= form.text_field :role_in_project %>
-  </div>
-
-  <div class="field">
-    <%= form.label :project_tech_stack %>
-    <%= form.text_field :project_tech_stack %>
+  <div class="mb-8 field">
+    <%= form.label :project_tech_stack, class: 'font-bold mb-2 block text-sm' %>
+    <%= form.text_field :project_tech_stack, class: 'bg-jb-gray-dk-blue h-12 px-4 w-full bg-opacity-10' %>
   </div>
 
   <div class="actions">

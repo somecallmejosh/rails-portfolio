@@ -1,58 +1,43 @@
 <% provide(:title, "#{@project.title} Project Details") %>
 <% provide(:description, 'Briley Creative Web design and development portfolio') %>
-<div class="w-full px-4 py-4 mx-auto space-y-12 max-w-7xl lg:px-0">
-  <p id="notice"><%= notice %></p>
+<div class="w-full px-4 pb-16 mx-auto space-y-12 max-w-7xl lg:px-0">
+  <img src="<%= @project.image %>"  alt="" class="w-full">
 
-  <p>
-    <strong>Title:</strong>
-    <%= @project.title %>
-  </p>
+  <div class="grid grid-cols-3 gap-10 lg:gap-20">
+    <div class="py-8 border-t border-b md:border-b-0 md:col-span-1">
+      <div class="lg:sticky lg:top-8">
+        <div>
+        <h1 class="mb-6 text-h1"><%= @project.title %></h1>
+        <p class="mb-12 text-body-1 text-jb-gray-dk-blue"><%= @project.short_description %></p>
+      </div>
+      <div class="mb-6 space-y-4 text-sm font-bold text-jb-cyan" >
+        <p><%= @project.role_in_project %></p>
+        <p><%= @project.project_tech_stack %></p>
+      </div>
+      <a href="<%= @project.project_url %>" class="btn btn-secondary" target="_blank" rel="noreferrer">Visit Website</a>
+      </div>
+    </div>
 
-  <p>
-    <strong>Short description:</strong>
-    <%= @project.short_description %>
-  </p>
+    <div class="md:col-span-2">
+       <div class="mb-10">
+        <h2 class="mb-8 text-h3">Project Background</h2>
+        <p class="text-body-1"><%= @project.long_description %></p>
+      </div>
+      
+      <div class="space-y-10">
+        <h3 class="text-h3">Static Preview</h3>
+        <div class="space-y-8">
+          <img src="<%= @project.thumbnail_one %>" alt="Project thumbnail" class="w-full">
+          <img src="<%= @project.thumbnail_two %>" alt="Project thumbnail" class="w-full">
+        </div>
+      </div>
 
-  <p>
-    <strong>Long description:</strong>
-    <%= @project.long_description %>
-  </p>
 
-  <p>
-    <strong>Thumbnail one:</strong>
-    <%= @project.thumbnail_one %>
-  </p>
+      <div class="mt-10">
+        <%= link_to 'Edit', edit_project_path(@project) %> |
+        <%= link_to 'Back', projects_path %>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong>Thumbnail two:</strong>
-    <%= @project.thumbnail_two %>
-  </p>
-
-  <p>
-    <strong>Thumbnail three:</strong>
-    <%= @project.thumbnail_three %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= @project.image %>
-  </p>
-
-  <p>
-    <strong>Project url:</strong>
-    <%= @project.project_url %>
-  </p>
-
-  <p>
-    <strong>Role in project:</strong>
-    <%= @project.role_in_project %>
-  </p>
-
-  <p>
-    <strong>Project tech stack:</strong>
-    <%= @project.project_tech_stack %>
-  </p>
-
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', projects_path %>
 </div>

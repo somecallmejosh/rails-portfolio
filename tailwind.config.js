@@ -24,6 +24,7 @@ module.exports = {
         'jb-lt-gray-1': '#fafafa',
         'jb-lt-gray-2': '#eaeaeb',
         'jb-red': '#f43030',
+        'jb-form-gray': '#979797',
       },
     },
     fontFamily: {
