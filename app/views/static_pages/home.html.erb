@@ -1,9 +1,63 @@
 <% provide(:title, 'CT Freelance Web Developer') %>
 <% provide(:description, 'I am a CT based freelance web designer and full stack developer with 18 years of experience') %>
-<div class="w-full px-4 py-4 mx-auto space-y-12 max-w-7xl lg:px-0">
-  <div class="max-w-md p-12 shadow-lg">
-    <h1 class="text-h1">Hi, I'm Josh and I love building beautfiul websites.</h1>
-    <p class="text-body-1">I am a CT based freelance web designer and full stack web developer with 18 years of experience. I have a passion for creating beautiful and functional websites. I am currently looking for opportunities to design and build new websites and applications.</p>
-    <a href="#" class="btn btn-secondary">TEST</a>
+<div class="w-full px-4 pb-24 mx-auto space-y-12 max-w-7xl lg:px-0">
+  <div class="flex flex-col w-full md:relative md:aspect-w-86 md:aspect-h-75 lg:aspect-w-37 lg:aspect-h-20 md:block">
+    <div class="order-1 md:absolute md:bottom-0 md:left-0 md:z-10 md:max-w-lg ">
+      <div class="w-full py-8 bg-white md:p-8 md:absolute md:bottom-0 md:left-0 md:pl-0">
+        <h1 class="mb-4 text-h1">Hi, I'm Josh and I love building beautfiul websites.</h1>
+        <a href="#about-me" class="btn btn-secondary">About Me</a>
+      </div>    
+    </div>
+    <picture>
+      <source 
+        srcset="https://res.cloudinary.com/dwjulenau/image/upload/v1634579961/josh-portfolio/homepage/desktop/image-homepage-hero.jpg, 
+        https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/desktop/image-homepage-hero_2x.jpg 2x" 
+        media="(min-width: 1024px)">
+      <source srcset="https://res.cloudinary.com/dwjulenau/image/upload/v1634579961/josh-portfolio/homepage/tablet/image-homepage-hero.jpg, 
+        https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/tablet/image-homepage-hero_2x.jpg 2x" 
+        media="(min-width: 769px)">
+      <source srcset="https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/mobile/image-homepage-hero.jpg, 
+        https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/mobile/image-homepage-hero_2x.jpg 2x" 
+        media="(min-width: 100px)">
+      <img 
+        src="https://res.cloudinary.com/dwjulenau/image/upload/v1634579961/josh-portfolio/homepage/desktop/image-homepage-hero.jpg" 
+        role="presentation" 
+        aria-hidden="true" 
+        alt="" 
+        height="600" 
+        width="1110" 
+        class="z-0 block w-full md:inset-0 md:absolute order-0">
+    </picture>
+  </div>
+  <div class="grid gap-12 md:grid-cols-3 lg:grid-cols-2">
+    <picture>
+      <source 
+        srcset="https://res.cloudinary.com/dwjulenau/image/upload/v1634579961/josh-portfolio/homepage/desktop/image-homepage-profile.jpg, 
+        https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/desktop/image-homepage-profile_2x.jpg 2x" 
+        media="(min-width: 1024px)">
+      <source srcset="https://res.cloudinary.com/dwjulenau/image/upload/v1634579961/josh-portfolio/homepage/tablet/image-homepage-profile.jpg, 
+        https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/tablet/image-homepage-profile_2x.jpg 2x" 
+        media="(min-width: 769px)">
+      <source srcset="https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/mobile/image-homepage-profile.jpg, 
+        https://res.cloudinary.com/dwjulenau/image/upload/v1634579962/josh-portfolio/homepage/mobile/image-homepage-profile_2x.jpg 2x" 
+        media="(min-width: 100px)">
+      <img 
+        src="https://res.cloudinary.com/dwjulenau/image/upload/v1634579961/josh-portfolio/homepage/desktop/image-homepage-profile.jpg" 
+        role="presentation" 
+        aria-hidden="true" 
+        alt="" 
+        height="600" 
+        width="1110" 
+        class="max-w-full md:col-span-1">
+    </picture>
+    <div id="about-me" class="md:col-span-2 md:flex md:items-center lg:col-span-1 lg:px-24">
+      <div class="flex items-center h-full py-8 border-t border-b">
+        <div>
+          <h2 class="mb-6 text-h2">About Me</h2>
+          <p class="mb-6 opacity-75 text-body-1 text-jb-gray-dk-blue">I’m a senior UI developer looking for a new role in an exciting company. I focus on writing accessible HTML, using modern CSS practices and writing clean JavaScript. When writing JavaScript code, I mostly use Vue.js, but I can adapt to whatever tools are required. I’m based in Manchester, CT, but I’m happy working remotely and have experience in remote teams. When I’m not coding, you’ll find me outdoors. I love being out in nature whether that’s going for a walk, run or cycling. I’d love you to check out my work.</p>
+          <a href="/projects" class="btn btn-secondary">Go To Portfolio</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

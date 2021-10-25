@@ -10,6 +10,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      aspectRatio: {
+        20: '20',
+        32: '32',
+        37: '37',
+        75: '75',
+        86: '86',
+      },
       colors: {
         'jb-cyan': '#5FB4A2',
         'jb-dk-blue': '#203a4c',
@@ -25,9 +32,11 @@ module.exports = {
     },
   },
   variants: {
+    aspectRatio: ['responsive', 'hover'],
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/aspect-ratio'),
     plugin(function ({ addComponents, theme }) {
       const button = {
         '.btn': {
@@ -57,18 +66,18 @@ module.exports = {
           fontSize: '3.125rem',
           fontWeight: '700',
           lineHeight: '1',
-          letterSpacing: '-0.45',
+          letterSpacing: '-0.45px',
         },
         '.text-h2': {
           fontSize: '2.5rem',
           fontWeight: '700',
           lineHeight: '1.05',
-          letterSpacing: '-0.36em',
+          letterSpacing: '-0.36px',
         },
         '.text-h3': {
           fontSize: '2rem',
           lineHeight: '1.125',
-          letterSpacing: '-0.29em',
+          letterSpacing: '-0.29px',
         },
         '.text-body-1': {
           fontSize: '1rem',
