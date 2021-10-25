@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_22_020958) do
+ActiveRecord::Schema.define(version: 2021_10_25_010246) do
 
-  create_table "homes", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "short_description"
+    t.text "long_description"
+    t.string "thumbnail_one"
+    t.string "thumbnail_two"
+    t.string "thumbnail_three"
+    t.string "image"
+    t.string "project_url"
+    t.string "role_in_project"
+    t.string "project_tech_stack"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

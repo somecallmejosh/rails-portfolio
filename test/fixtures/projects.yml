@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  short_description: MyText
+  long_description: MyText
+  thumbnail_one: MyString
+  thumbnail_two: MyString
+  thumbnail_three: MyString
+  image: MyString
+  project_url: MyString
+  role_in_project: MyString
+  project_tech_stack: MyString
+
+two:
+  title: MyString
+  short_description: MyText
+  long_description: MyText
+  thumbnail_one: MyString
+  thumbnail_two: MyString
+  thumbnail_three: MyString
+  image: MyString
+  project_url: MyString
+  role_in_project: MyString
+  project_tech_stack: MyString

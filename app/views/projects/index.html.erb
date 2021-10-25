@@ -1,0 +1,50 @@
+<% provide(:title, "Portfolio") %>
+<% provide(:description, 'Briley Creative Web design and development portfolio') %>
+
+<div class="w-full px-4 py-4 mx-auto space-y-12 max-w-7xl lg:px-0">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Projects</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Short description</th>
+        <th>Long description</th>
+        <th>Thumbnail one</th>
+        <th>Thumbnail two</th>
+        <th>Thumbnail three</th>
+        <th>Image</th>
+        <th>Project url</th>
+        <th>Role in project</th>
+        <th>Project tech stack</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.title %></td>
+          <td><%= project.short_description %></td>
+          <td><%= project.long_description %></td>
+          <td><%= project.thumbnail_one %></td>
+          <td><%= project.thumbnail_two %></td>
+          <td><%= project.thumbnail_three %></td>
+          <td><%= project.image %></td>
+          <td><%= project.project_url %></td>
+          <td><%= project.role_in_project %></td>
+          <td><%= project.project_tech_stack %></td>
+          <td><%= link_to 'Show', project %></td>
+          <td><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-secondary' %></td>
+          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Project', new_project_path, class: 'btn btn-secondary' %>
+</div>

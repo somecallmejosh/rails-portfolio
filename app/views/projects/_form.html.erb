@@ -1,0 +1,67 @@
+<%= form_with(model: project, local: true) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_description %>
+    <%= form.text_area :short_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :long_description %>
+    <%= form.text_area :long_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbnail_one %>
+    <%= form.text_field :thumbnail_one %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbnail_two %>
+    <%= form.text_field :thumbnail_two %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbnail_three %>
+    <%= form.text_field :thumbnail_three %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_url %>
+    <%= form.text_field :project_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role_in_project %>
+    <%= form.text_field :role_in_project %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_tech_stack %>
+    <%= form.text_field :project_tech_stack %>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </div>
+<% end %>
