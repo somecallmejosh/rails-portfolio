@@ -1,11 +1,13 @@
 <% provide(:title, "Edit #{@project.title}") %>
 <% provide(:description, 'Edit details about this project') %>
 
-<div class="w-full px-4 py-4 mx-auto space-y-12 max-w-7xl lg:px-0">
-  <h1>Editing Project</h1>
+<div class="w-full max-w-4xl px-4 py-4 pb-24 mx-auto space-y-12 lg:px-0">
+  <h1 class="text-h2">Editing Project</h1>
 
   <%= render 'form', project: @project %>
 
-  <%= link_to 'Show', @project %> |
-  <%= link_to 'Back', projects_path %>
+  <div class="my-12">
+    <%= link_to 'Show', @project, class: 'btn btn-secondary' %>
+    <%= link_to 'Back', projects_path, class: 'btn btn-secondary' %>
+  </div>
 </div>

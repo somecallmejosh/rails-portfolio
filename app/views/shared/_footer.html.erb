@@ -8,12 +8,21 @@
         <%= render '/shared/logo_inverse' %>
       </a>
     <% end %>
-      
       <nav aria-label="Main Site Nav" class="flex ">
         <ul class="flex flex-col items-center h-full gap-4 text-sm uppercase lg:flex-row">
           <li class="flex items-center h-full"><a href="/" class="flex items-center w-full h-full hover:text-jb-cyan <% if controller.action_name == 'home' %>text-jb-cyan pointer-events-none<% end %>">Home</a></li>
           <li class="flex items-center h-full"><a href="/projects" class="flex items-center w-full h-full hover:text-jb-cyan <% if controller_name == 'projects' %>text-jb-cyan pointer-events-none<% end %>">Portfolio</a></li>
           <li class="flex items-center h-full"><a href="/contact" class="flex items-center w-full h-full hover:text-jb-cyan <% if controller.action_name == 'contact' %>text-jb-cyan pointer-events-none<% end %>">Contact</a></li>
+          
+          <li class="flex items-center h-full <% if controller_name == 'sessions' %>text-jb-cyan pointer-events-none<% end %>">
+            <% if current_user %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
+            <% else %>
+              <%= link_to 'Login', new_user_session_path  %>
+            <% end %>
+           
+          </li>
+
         </ul>
       </nav>
     </div>
