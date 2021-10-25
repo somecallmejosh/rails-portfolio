@@ -8,7 +8,7 @@
       <div class="lg:sticky lg:top-8">
         <div>
         <h1 class="mb-6 text-h1"><%= @project.title %></h1>
-        <p class="mb-12 text-body-1 text-jb-gray-dk-blue"><%= @project.short_description %></p>
+        <p class="mb-12 text-body-1 text-jb-gray-dk-blue "><%= @project.short_description %></p>
       </div>
       <div class="mb-6 space-y-4 text-sm font-bold text-jb-cyan" >
         <p><%= @project.role_in_project %></p>
@@ -43,5 +43,32 @@
       </div>
     </div>
   </div>
-
+  <div class="grid grid-cols-2 border-t border-b divide-x">
+    <div class="py-6">
+      <% unless @project.id == Project.first.id  %>
+        <div class="flex items-center space-x-2">
+          <%= heroicon "chevron-left", options: { class: "h-8 w-8 opcaity-50" } %> 
+          <div>
+            <p class="text-h3">            
+              <%= link_to Project.get_previous_project(@project).title, Project.get_previous_project(@project)  %>
+            </p>
+            <span class="text-sm opacity-50">Previous Project</span> 
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="flex flex-col py-6">
+      <% unless  @project.id == Project.last.id   %>
+        <div class="flex items-center justify-end space-x-2 text-right">
+          <div>
+            <p class="text-h3">
+              <%= link_to  Project.get_next_project(@project).title, Project.get_next_project(@project) %>
+            </p>
+            <span class="text-sm opacity-50">Next Project</span> 
+          </div>  
+          <%= heroicon "chevron-right", options: { class: "h-8 w-8 opacity-50" } %>       
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
