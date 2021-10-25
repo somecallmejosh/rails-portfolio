@@ -1,9 +1,9 @@
 <% provide(:title, "Portfolio") %>
 <% provide(:description, 'Briley Creative Web design and development portfolio') %>
 
-<div class="w-full px-4 py-4 mx-auto space-y-12 max-w-7xl lg:px-0">
+<div class="w-full px-4 py-4 mx-auto space-y-24 max-w-7xl lg:px-0">
   <% @projects.each.with_index do |project, i| %>
-    <div class="grid gap-8 pb-10 md:grid-cols-2 md:pb-0">
+    <div class="grid gap-8 md:grid-cols-2 md:pb-0">
       <div class="flex items-center <% if i.even? %>md:order-0<%else%>md:order-1<%end%>">
         <img src="<%= project.thumbnail_one %>" alt="">
       </div>

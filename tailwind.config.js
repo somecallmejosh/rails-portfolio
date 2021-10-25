@@ -49,6 +49,7 @@ module.exports = {
           textTransform: 'uppercase',
           transition: 'all .2s ease-in-out',
           whiteSpace: 'nowrap',
+          cursor: 'pointer',
         },
         '.btn-secondary': {
           backgroundColor: `${theme('colors.white')}`,
