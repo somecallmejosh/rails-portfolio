@@ -74,3 +74,7 @@ Requires two terminals:
 1. `rails g migration add_slug_to_projects slug:string:uniqu`
 1. `rails db:migrate`
 1. In rails console, `Project.find_each(&:save)`
+
+## Contact Form
+
+[See this gist for details](https://gist.github.com/stevecondylios/16a53b73f22621e3cde2e17096dbf5ca)
