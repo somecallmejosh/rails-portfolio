@@ -60,3 +60,17 @@ Requires two terminals:
 
 - Terminal 1: `rails s`
 - Terminal 2: `bin/webpack-dev-server`. This will provide hot reloading of pages, too. Pretty sweet!
+
+## Pretty URLs
+
+[Here's a good how-to](https://www.youtube.com/watch?v=uEw3Q5nLtPI)
+
+1. Add `friendly_id` gem, then bundle install
+1. `rails g friendly_id`
+1. `rails db:migrate`
+1. `extend friendlyId` in project.rb model
+1. `friendly_id :title, use: :slugged` in project.rb model
+1. `@project = Project.friendly.find(params[:id])` in set_project controller method
+1. `rails g migration add_slug_to_projects slug:string:uniqu`
+1. `rails db:migrate`
+1. In rails console, `Project.find_each(&:save)`
