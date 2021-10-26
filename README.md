@@ -47,6 +47,10 @@ environment.loaders.keys().forEach((loaderName) => {
 
 ```
 
+## Previous/Next Project Functionality
+
+[Borrowed from burnignorance.com](http://burnignorance.com/ruby-development-tips/render-prev-next-record-from-show-page-in-rails/)
+
 #### Tailwind Config
 
 1. Run `npx tailwindcss init`. This will generate the tailwind.config.js file at the root of the project.
