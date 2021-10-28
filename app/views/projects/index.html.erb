@@ -1,7 +1,7 @@
 <% provide(:title, "Portfolio") %>
 <% provide(:description, 'Briley Creative Web design and development portfolio') %>
 
-<div class="w-full px-4 py-4 pb-24 mx-auto space-y-24 max-w-7xl lg:px-0">
+<div class="w-full px-4 py-4 pb-24 mx-auto space-y-24 max-w-7xl lg:px-0 lg:space-y-32">
   <% @projects.each.with_index do |project, i| %>
     <div class="grid gap-8 md:grid-cols-2 md:pb-0">
       <div class="flex items-center <% if i.even? %>md:order-0<%else%>md:order-1<%end%>">
@@ -28,6 +28,7 @@
       </div>
     </div>
   <% end %>
+  <%= render '/shared/pitch' %>
   <% if current_user %>
   <%= link_to 'New Project', new_project_path, class: 'btn btn-secondary' %>
   <% end %>
