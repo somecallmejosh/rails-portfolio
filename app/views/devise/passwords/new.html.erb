@@ -1,3 +1,5 @@
+<% provide(:title, 'Forgot your password?') %>
+<% provide(:description, 'Change your password here.') %>
 <div class="max-w-lg mx-auto">
   <h2 class="mb-8 text-h2">Forgot your password?</h2>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>

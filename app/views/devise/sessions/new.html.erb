@@ -1,4 +1,5 @@
-
+<% provide(:title, 'Login') %>
+<% provide(:description, 'Login to make edits to your website.') %>
 <div class="max-w-lg mx-auto">
   <h2 class="mb-8 text-h2">Log in</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
