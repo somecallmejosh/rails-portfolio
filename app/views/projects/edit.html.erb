@@ -1,8 +1,8 @@
 <% provide(:title, "Edit #{@project.title}") %>
 <% provide(:description, 'Edit details about this project') %>
 
-<div class="w-full max-w-4xl px-4 py-4 pb-24 mx-auto space-y-12 lg:px-0">
-  <h1 class="text-h2">Editing Project</h1>
+<div class="w-full px-4 py-4 pb-24 mx-auto space-y-12 max-w-7xl lg:px-0">
+  <h1 class="text-h2">Editing <span class="text-jb-cyan"><%= @project.title %></span> Project</h1>
 
   <%= render 'form', project: @project %>
 
