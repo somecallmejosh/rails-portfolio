@@ -14,7 +14,7 @@
         <p><%= @project.role_in_project %></p>
         <p><%= @project.project_tech_stack %></p>
       </div>
-      <a href="<%= @project.project_url %>" class="btn btn-secondary" target="_blank" rel="noreferrer">Visit Website</a>
+      <a href="<%= @project.project_url %>" class="btn btn-primary" target="_blank" rel="noreferrer">Visit Website</a>
       </div>
     </div>
 
@@ -35,10 +35,10 @@
 
       <div class="mt-10">
         <% if current_user %>
-        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-secondary' %>
-        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %>
+        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-primary' %>
+        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
         <% end %>
-        <%= link_to 'Back', projects_path, class: 'btn btn-secondary' %>
+        <%= link_to 'Back', projects_path, class: 'btn btn-primary' %>
         
       </div>
     </div>

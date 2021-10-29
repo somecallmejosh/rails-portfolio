@@ -45,18 +45,23 @@ module.exports = {
           border: `${theme('colors.jb-gray-dk-blue')} 1px solid`,
           display: 'inline-flex',
           justifyContent: 'center',
-          padding: `${theme('spacing.3')} ${theme('spacing.8')}`,
+          padding: `0 ${theme('spacing.8')}`,
+          height: `${theme('spacing.12')}`,
           textTransform: 'uppercase',
           transition: 'all .2s ease-in-out',
           whiteSpace: 'nowrap',
           cursor: 'pointer',
         },
-        '.btn-secondary': {
+        '.btn-primary': {
           backgroundColor: `${theme('colors.white')}`,
         },
-        '.btn-secondary:hover': {
+        '.btn-primary:hover, .btn-secondary:hover': {
           backgroundColor: `${theme('colors.jb-cyan')}`,
           borderColor: `${theme('colors.jb-cyan')}`,
+          color: '#ffffff',
+        },
+        '.btn-secondary': {
+          backgroundColor: `${theme('colors.jb-gray-dk-blue')}`,
           color: '#ffffff',
         },
       }
