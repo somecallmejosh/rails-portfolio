@@ -91,7 +91,7 @@ module.exports = {
           lineHeight: '1.875',
         },
         '.text-body-2': {
-          fontSize: '0.9375re2',
+          fontSize: '0.9375rem',
           lineHeight: '1',
         },
       }
