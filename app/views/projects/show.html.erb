@@ -8,7 +8,7 @@
       <div class="lg:sticky lg:top-8">
         <div>
         <h1 class="mb-6 text-h1"><%= @project.title %></h1>
-        <p class="mb-12 text-body-1 text-jb-gray-dk-blue "><%= @project.short_description %></p>
+        <div class="mb-12 text-body-1 text-jb-gray-dk-blue "><%= @project.short_description %></div>
       </div>
       <div class="mb-6 space-y-4 text-sm font-bold text-jb-cyan" >
         <p><%= @project.role_in_project %></p>
@@ -21,7 +21,7 @@
     <div class="md:col-span-2">
        <div class="mb-10">
         <h2 class="mb-8 text-h3">Project Background</h2>
-        <p class="text-body-1"><%= @project.long_description %></p>
+        <div class="text-body-1"><%= @project.long_description %></div>
       </div>
       
       <div class="space-y-10">

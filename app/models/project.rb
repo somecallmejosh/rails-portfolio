@@ -26,6 +26,8 @@ class Project < ApplicationRecord
   validates :project_url, presence: true
   validates :role_in_project, presence: true
   validates :project_tech_stack, presence: true
+  has_rich_text :short_description
+  has_rich_text :long_description
 
 
   def self.get_previous_project(current_project)
