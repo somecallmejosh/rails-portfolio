@@ -26,6 +26,9 @@ module.exports = {
         'jb-red': '#f43030',
         'jb-form-gray': '#979797',
       },
+      minHeight: (theme) => ({
+        ...theme('spacing'),
+      }),
     },
     fontFamily: {
       sans: ['Public Sans', 'sans-serif'],
