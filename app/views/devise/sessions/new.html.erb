@@ -1,16 +1,16 @@
 <% provide(:title, 'Login') %>
 <% provide(:description, 'Login to make edits to your website.') %>
-<div class="max-w-lg px-4 mx-auto lg:px-0">
+<div class="max-w-lg px-4 pt-6 pb-12 mx-auto lg:px-0">
   <h2 class="mb-8 text-h2">Log in</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="mb-8 field">
       <%= f.label :email, class: 'font-bold block mb-1' %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'w-full h-12 p-4 bg-jb-gray-dk-blue bg-opacity-10' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'w-full h-12 p-4 bg-jb-gray-dk-blue bg-opacity-5 appearance-none' %>
     </div>
 
     <div class="mb-8 field">
       <%= f.label :password, class: 'font-bold block mb-1' %>
-      <%= f.password_field :password, autocomplete: "current-password", class: 'w-full h-12 p-4 bg-jb-gray-dk-blue bg-opacity-10' %>
+      <%= f.password_field :password, autocomplete: "current-password", class: 'w-full h-12 p-4 bg-jb-gray-dk-blue bg-opacity-5 appearance-none' %>
     </div>
 
     <% if devise_mapping.rememberable? %>
