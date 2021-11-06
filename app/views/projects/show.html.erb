@@ -34,7 +34,7 @@
 
 
       <div class="mt-10">
-        <% if current_user %>
+        <% if current_user && current_user.admin %>
         <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-primary' %>
         <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
         <% end %>

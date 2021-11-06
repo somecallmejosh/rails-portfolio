@@ -18,7 +18,7 @@
               </div>
               <div class="mb-4">
                 <%= link_to 'View Project', project , class: 'btn btn-primary' %>
-                <% if current_user %>
+                <% if current_user && current_user.admin %>
                 <%= link_to 'Edit', edit_project_path(project), class: 'btn btn-primary' %> 
                 <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
                 <% end %>
@@ -29,7 +29,7 @@
     </div>
   <% end %>
   <%= render '/shared/pitch' %>
-  <% if current_user %>
+  <% if current_user && current_user.admin %>
   <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
   <% end %>
 </div>
