@@ -8,34 +8,73 @@
       <p class="text-body-1">I’d love to hear about what you’re working on and how I could help. I’m currently looking for new opportunities as a front end developer in a remote position for a Hartford, Boston, or New York based company. But I’m also happy to hear about opportunites that don’t fit that description. I’m a hard-working and positive person who will always approach each task with a sense of purpose and attention to detail. Please do feel free to check out my online profiles below and get in touch using the form.</p>
     </div>
   </div>
-  <div class="grid gap-8 py-12 border-t lg:gap-12 lg:grid-cols-2">
+  <div class="grid gap-8 py-12 border-t lg:gap-12 lg:grid-cols-2"  x-data="getData()">
     <h2 class="text-h2">Contact Me</h2>
-    <div>
-      <%= form_for @contact do |f| %>
+    <div>  
+      <div x-show.transition="status || isError">
+        <p class="font-bold" x-text="modalHeaderText"></p>
+        <p x-text="modalBodyText">></p>
+      </div>
+      <form x-show="!formSubmitted" class="new_contact" novalidate="true" id="new_contact" accept-charset="UTF-8" @submit.prevent="submitData">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+        <input type="hidden" name="authenticity_token" value="UN0meLToTFWSZSu4D54lEV3uW0MJlwW2F2HyrYRsHlQP0/1inY2E6dTT5coWpQbFrM9NvLI7EalqNKNbuMDsLQ==">
         <div class="space-y-8">
           <div>
-            <%= f.label :name, class: 'block mb-2 text-sm font-bold' %>
-            <%= f.text_field  :name, required: true, class: "w-full h-16 p-4 bg-jb-gray-dk-blue bg-opacity-5", placeholder: 'Jane Doe' %>
+            <div class="flex justify-between">
+              <label class="block mb-2 text-sm font-bold" for="contact_name">Name</label>
+              <small class="opacity-50">Required</small>
+            </div>
+            <div class="relative">
+              <input required="required" class="w-full h-16 p-4 pr-10 bg-jb-gray-dk-blue bg-opacity-5" placeholder="Jane Doe" x-model="contact.name" type="text" name="contact[name]" id="contact_name">
+              <div x-show="contact.name.length > 0" class="absolute flex items-center justify-center w-6 h-6 text-sm text-white transform -translate-y-1/2 rounded-full top-1/2 right-4" x-show="contact.email.length > 0" 
+                :class="validation.name(contact.name) ? 
+                  'bg-green-500' : 'bg-red-500'" >
+                <svg x-show="validation.name(contact.name)" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <svg x-show="!validation.name(contact.name)" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+              </div>
+            </div>
           </div>
 
           <div>
-            <%= f.label :email, class: 'block mb-2 text-sm font-bold' %>
-            <%= f.text_field :email, required: true, class: "w-full h-16 p-4 bg-jb-gray-dk-blue bg-opacity-5", placeholder: 'email@example.com' %>
+            <div class="flex justify-between">
+              <label class="block mb-2 text-sm font-bold" for="contact_email">Email</label>
+              <small class="opacity-50">Required</small>
+            </div>
+            <div class="relative">
+              <input required="required" class="w-full h-16 p-4 pr-10 bg-jb-gray-dk-blue bg-opacity-5" placeholder="email@example.com" x-model="contact.email" type="text" name="contact[email]" id="contact_email">
+              <div class="absolute flex items-center justify-center w-6 h-6 text-sm text-white transform -translate-y-1/2 rounded-full top-1/2 right-4" x-show="contact.email.length > 0" :class="validation.email(contact.email) ? 
+                  'bg-green-500' : 'bg-red-500'" >
+                <svg x-show="validation.email(contact.email)" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <svg x-show="!validation.email(contact.email)" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+              </div>
+            </div>
+            
           </div>
 
           <div>
-            <%= f.label :message, class: 'block mb-2 text-sm font-bold' %>
-            <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "w-full p-4 h-86 bg-jb-gray-dk-blue bg-opacity-5", 
-                placeholder: "How can I help?"%>
+            <div class="flex justify-between">
+              <label class="block mb-2 text-sm font-bold" for="contact_message">Message</label>
+              <small class="opacity-50">Required</small>
+            </div>
+            <div class="relative">
+              <textarea rows="8" cols="40" required="required" class="w-full p-4 h-86 bg-jb-gray-dk-blue bg-opacity-5" x-model="contact.message" placeholder="How can I help?" name="contact[message]" id="contact_message"></textarea>
+              <div class="absolute flex items-center justify-center w-6 h-6 text-sm text-white transform -translate-y-1/2 rounded-full top-1/2 right-4" x-show="contact.message.length > 0" :class="validation.message(contact.message) ? 
+                'bg-green-500' : 'bg-red-500'" >
+                <svg x-show="validation.message(contact.message)" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <svg x-show="!validation.message(contact.message)" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+              </div>
+            </div>
           </div>
 
-          <div class= "hidden">
-            <%= f.text_field :nickname, :hint => 'Leave this field blank!', class: 'hidden' %>
+          <div class="hidden">
+            <input hint="Leave this field blank!" class="hidden" type="text" name="contact[nickname]" id="contact_nickname">
           </div>
-
-          <%= f.submit 'Send Message', class: 'btn btn-secondary' %>
+          <p>Form is valid: <span x-text="validation.formValidity"></span></p>
+          <button class="btn btn-secondary" x-text="buttonLabel"></button>
         </div>
-      <% end %>
+      </form>
+
+
     </div>
   </div>
 
@@ -44,13 +83,72 @@
 <script>
   function getData() {
     return {
-      formData: {
+      contact: {
+        name: "",
         email: "",
         message: "",
       },
       status: false,
       loading: false,
       isError: false,
+      formSubmitted: false,
+      modalHeaderText: "",
+      modalBodyText: "",
+      buttonLabel: 'Send Message',
+      validation: {
+        name(name) {
+          return name.length > 1;
+        },
+        email(email) {
+          var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(email);
+        },
+        message(message) {
+          return message.length > 10;
+        },
+        formValidity() {
+          return this.validation.name(this.contact.name) && this.validation.email(this.contact.email) && this.validation.message(this.contact.message);
+        }
+      },
+      submitData() {
+        if (!this.contact.email.length ||
+          !this.contact.name.length ||
+          !this.contact.message.length) {
+          alert("Please fill out all required field and try again!")
+          return;
+        }
+        this.buttonLabel = 'Submitting...'
+        this.loading = true;
+        fetch('<%= contacts_path %>', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.contact)
+          })
+          .then((response) => {
+            if (response.status === 201) {
+              this.modalHeaderText = "Thank you!"
+              this.modalBodyText = "Thanks for taking the time to reach out to me. I will do my best to respond in a timely manner. If you would like to touch base sooner, please email me at devops@thebrileys.com.";
+              this.status = true;
+            } else {
+              throw new Error("Your registration failed");
+            }
+          })
+          .catch((error) => {
+            this.modalHeaderText = "Ooops Error!"
+            this.modalBodyText = error.message;
+            this.isError = true;
+          })
+          .finally(() => {
+            this.loading = false;
+            this.contact.email = ''
+            this.contact.name = '' 
+            this.contact.message = '' 
+            this.buttonLabel = 'Submit'
+            this.formSubmitted = true;
+          })
+        }
+      }
     }
-  }
 </script>
