@@ -127,7 +127,7 @@
           body: JSON.stringify(this.contact)
           })
           .then((response) => {
-            if (response.status === 201) {
+            if (response.status === 201 || response.status === 200) {
               this.modalHeaderText = "Thank you!"
               this.modalBodyText = "Thanks for taking the time to reach out to me. I will do my best to respond in a timely manner. If you would like to touch base sooner, please email me at devops@thebrileys.com.";
               this.status = true;
